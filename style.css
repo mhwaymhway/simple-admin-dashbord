@@ -1,0 +1,234 @@
+*{
+    padding: 0% !important;
+    margin:0% !important;
+    box-sizing: border-box;
+}
+
+.containerr{
+    position: relative;
+    width: 100%;
+}
+.nav{
+    position: fixed;
+    width: 267px;
+    height: 100vh;
+    background: purple;
+    border-left: 10px solid purple;
+    height: 100vh;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.nav.active{
+    width: 70px;
+}
+.nav ul{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.nav ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.nav ul li:hover,
+.nav ul li.hovered{
+    background-color: white;
+}
+.nav ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.nav ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color: white;
+    text-decoration: none;
+}
+.nav ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.nav ul li:hover a,
+.nav ul li.hovered a{
+    color: purple;
+}
+.nav ul li a .icon i{
+    font-size: 1.75em;
+}
+.nav ul li a .title{
+    position: relative;
+    padding: 0 10px;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.nav ul li:hover a::before,
+.nav ul li.hovered a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 35px 35px 0 10px white;
+    pointer-events: none;
+}
+.nav ul li:hover a::after,
+.nav ul li.hovered a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 35px -35px 0 10px white;
+    pointer-events: none;
+}
+/* main content */
+.main{
+    position: absolute;
+    width: calc(100% - 267px);
+    left: 267px;
+    min-height: 100vh;
+    transition: 0.5s;
+}
+.main.active{
+    width: calc(100% - 70px);
+    left: 70px;
+}
+.toggle i{
+    font-size: 1.5rem;
+    transition: .3s;
+}
+.toggle i:hover{
+    color: violet;
+}
+.profile img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.number{
+    font-size: 40px;
+    color: violet;
+}
+.card-name{
+    font-size: 18px;
+}
+.iconBox{
+    font-size: 2.8rem;
+}
+
+.card-box .card:hover{
+    background-color: violet;
+}
+.card-box .card:hover .number{
+    color: white;
+}
+.view-all{
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+}
+
+td {
+    padding: 8px !important;
+}
+.recentOrder table thead tr{
+    pointer-events: none;
+}
+.recentOrder table tr:hover{
+    background-color: violet !important;
+    cursor: pointer;
+}
+
+.recentCustomer{
+    position: relative;
+ 
+}
+.recentCustomer td{
+    padding: 20px;
+}
+.imgB{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.imgB img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.recentTitle{
+    color: purple;
+}
+.recentCustomer table tr:hover{
+    cursor: pointer;
+    color: violet;
+}
+@media screen and (max-width:996px)
+{
+    .nav{
+        left: -267px;
+    }
+    .nav.active{
+        left: 0;
+        width: 267px;
+    }
+    .main{
+        width: 100%;
+        left: 0;
+    }
+    .main.active{
+        left: 267px;
+    }
+
+}
+@media  screen and (max-width:480px) {
+
+    .nav{
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .nav.active{
+        width: 100%;
+        left: 0;
+    }
+    .toggle{
+        z-index: 20002;
+    }
+    .main.active .toggle{
+        position: fixed;
+       left: initial;
+       right: 240px;
+        color: white;
+    }
+}
